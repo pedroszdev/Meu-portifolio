@@ -1,5 +1,5 @@
 import "./App.css";
-import fotoMain from "./fotoMain.jpg";
+import fotoMain from "./images/fotoMain.jpg";
 import BlurText from "./BlurText";
 import DarkVeil from "./DarkVeil";
 import cssIcon from "./icons/css.png";
@@ -13,12 +13,14 @@ import nodeJSIcon from "./icons/nodeJS.png";
 import pythonIcon from "./icons/python.png";
 import reactIcon from "./icons/react.png";
 import { CgProfile } from "react-icons/cg";
-import fotoPerfil from "./fotoPerfil.PNG";
+import fotoPerfil from "./images/fotoPerfil.PNG";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
-import fotoProjetoEstoque from "./FotoProjetoEstoque.jpg";
-import fotoListaTarefas from './fotoListaTarefas.jpg'
+import fotoProjetoEstoque from "./images/FotoProjetoEstoque.jpg";
+import fotoListaTarefas from "./images/fotoListaTarefas.jpg";
+import fotoWeatherNow from './images/FotoWeatherNow.png'
+
 function App() {
   return (
     <>
@@ -180,14 +182,33 @@ function App() {
                 </p>
                 <div className="botoes">
                   <button className="botao-projeto">
-                    <a href="https://github.com/pedroszdev/Sistema-de-Estoque-Django">
+                    <a href="https://github.com/pedroszdev/Sistema-de-Estoque-Django" target="_blank" rel="noreferrer">
                       Codigo
                     </a>
                   </button>
                   <button className="botao-projeto">
-                    <a href="https://sistema-estoque-qkq0.onrender.com">
+                    <a href="https://sistema-estoque-qkq0.onrender.com" target="_blank" rel="noreferrer">
                       Ver Mais
                     </a>
+                  </button>
+                </div>
+              </div>
+              <div className="projeto">
+                <img src={fotoWeatherNow} alt="" />
+                <h3>Previsão do Tempo JavaScript</h3>
+                <p>
+                  Weather Now é uma aplicação web desenvolvida para fornecer
+                  informações meteorológicas detalhadas de qualquer cidade do
+                  mundo. Com uma interface limpa e intuitiva, o usuário pode
+                  obter rapidamente a previsão do tempo atual, horária e para os
+                  próximos sete dias.
+                </p>
+                <div className="botoes">
+                  <button className="botao-projeto">
+                    <a href="https://github.com/pedroszdev/App-Metereologico" target="_blank" rel="noreferrer">Codigo</a>
+                  </button>
+                  <button className="botao-projeto">
+                    <a href="https://weather-now-pedro.vercel.app" target="_blank" rel="noreferrer">Ver Mais</a>
                   </button>
                 </div>
               </div>
@@ -202,27 +223,10 @@ function App() {
                 </p>
                 <div className="botoes">
                   <button className="botao-projeto">
-                    <a href="/">Codigo</a>
+                    <a href="/" target="_blank" rel="noreferrer">Codigo</a>
                   </button>
                   <button className="botao-projeto">
-                    <a href="/">Ver Mais</a>
-                  </button>
-                </div>
-              </div>
-              <div className="projeto">
-                <img src={fotoMain} alt="" />
-                <h3>Lorem ipsum dolor sit.</h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Dolor ipsa sapiente numquam fugit quia. Distinctio laboriosam
-                  voluptate eos alias sed?
-                </p>
-                <div className="botoes">
-                  <button className="botao-projeto">
-                    <a href="https://github.com/pedroszdev/Lista-Tarefas-JavaScript">Codigo</a>
-                  </button>
-                  <button className="botao-projeto">
-                    <a href="/">Ver Mais</a>
+                    <a href="/" target="_blank" rel="noreferrer">Ver Mais</a>
                   </button>
                 </div>
               </div>
@@ -277,6 +281,8 @@ function App() {
                 <a
                   href="https://api.whatsapp.com/send/?phone=5548988489595&text=Ol%C3%A1+Pedro%2C+vi+seu+portf%C3%B3lio+e+gostaria+de+conversar%21&type=phone_number&app_absent=0"
                   className="card-contato"
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   <div className="icon-contato">
                     <FaWhatsapp />
@@ -289,6 +295,8 @@ function App() {
                 <a
                   href="https://github.com/pedroszdev"
                   className="card-contato"
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   <div className="icon-contato">
                     <FaGithub />
@@ -301,6 +309,8 @@ function App() {
                 <a
                   href="https://www.linkedin.com/in/pedrosouza7"
                   className="card-contato"
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   <div className="icon-contato">
                     <FaLinkedinIn />
