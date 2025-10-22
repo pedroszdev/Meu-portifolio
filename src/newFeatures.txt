@@ -1,0 +1,5 @@
+OQUE FALTA FAZER PARA FINALIZAR O PORTIFOLIO
+    Colocar fotos melhores
+    Adicionar os projetos
+    Fazer o sistema de formulario salvar num sqlite
+    Fazer versão para celular

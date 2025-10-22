@@ -1,38 +1,463 @@
-.App {
-  text-align: center;
+
+html, body, #root { 
+  height: 100%; /* Garante que body, html e o contêiner React tenham 100% de altura */
+  width: 100%; /* Garante 100% de largura */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Você pode mover o reset do * para o início do App.css */
+* {
+  margin:0;
+  padding: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box; /* Boa prática de reset */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* O fundo fixo está correto, apenas garanta que as regras acima estão presentes */
+.dark-veil-background {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100vw; 
+  height: 100vh; 
+  z-index: -1; 
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main{
+  position: relative;
+  z-index: 1;
+  
+}
+.header{
+  max-width: 1200px;
+  margin: 15px auto;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+.menu{
+  
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(109, 109, 109,0.8);
+  border-radius: 20px;
+  padding: 15px 50px;
+  color: #ffffff;
+  font-size: 17px;
+}
+.hot-bar{
+  display: flex;
+}
+.hot-bar li{
+  list-style: none;
+  padding: 0 10px;
+  cursor: pointer;
+}
+.hot-bar li a{
+  text-decoration: none;
+  color: #ffffff;
+
+}
+
+.hot-bar li a:hover{
+  text-decoration: none;
+  color: #273188;
+
+}
+.home{
+  max-width: 1200px;
+  margin: 130px auto;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.titulo{
+  font-size: 30px;
+  padding-bottom: 20px;
+  color: #ffffff;
+}
+.content-home{
+  color: #ffffff;
+  padding: 54px ;
+  font-size: 18px;
+}
+.foto{
+  padding: 54px ;
+  padding-top: 0;
+}
+.foto img{
+  border: 2px solid rgba(109, 109, 109,0.8);
+  border-radius: 50%;
+  height: 430px;
+  width: 430px;
+}
+.skils{
+  display: flex;
+  margin: 30px auto;
+  max-width: 1200px;
+  justify-content: space-evenly;
 }
 
-.App-link {
-  color: #61dafb;
+.habilidade {
+  margin: 150px auto;
+  max-width: 1200px;
+  text-align: center;
+  margin-bottom: 80px;
+}
+.sobre-mim{
+  margin: 100px auto;
+  max-width: 1200px;
+  text-align: center;
+  color: #ffffff;
+}
+.content-sobre-mim{
+  display: flex;
+  margin-top: 25px;
+  gap:80px;
+  justify-content: space-around;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.content-sobre-mim div img{
+  border: 2px solid rgba(109, 109, 109,0.8);
+  border-radius: 20px;
+  height: 700px;
+  width: 500px;
+}
+.texto-sobre-mim{
+  font-size: 18px;
+  text-align: left;
+  padding-left: 15px;
+  border-left: 2px solid rgba(109, 109, 109,0.8);
+}
+.perfil{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 25px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.projetos{
+  margin: 150px auto;
+  max-width: 1200px;
+  text-align: center;
+  color: #ffffff;
+}
+.content-projeto{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 27px;
+}
+.projeto{
+  border: 1px solid rgba(109, 109, 109,0.8);
+  border-radius: 10px;
+  padding: 15px;
+}
+.projeto img{
+  height: 300px;
+  width: 350px;
+}
+.projeto p{
+  padding: 10px 0;
+}
+.botoes{
+  display: flex;
+  justify-content: space-evenly;
+}
+.botao-projeto{
+  height: 45px;
+  width: 130px;
+  background:none;
+  border: 2px solid rgba(109, 109, 109,0.8);
+  border-radius: 30px;
+  color: #ffffff;
+  font-size: 17px;
+  margin-top: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.botao-projeto:hover{
+  background-color: aliceblue;
+}
+.botao-projeto a:hover{
+  color: #273188;
+
+}
+.botao-projeto a{
+  text-decoration: none;
+  color: #ffffff;
+
+}
+
+.contato{
+  margin: 150px auto;
+  max-width: 1200px;
+  text-align: center;
+  color: #ffffff;
+}
+.content-contato{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}
+.forms{
+  margin-top: 50px;
+  border-right: 2px solid rgba(109, 109, 109,0.8);
+  padding-right: 30px;
+}
+.forms input{
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  padding: 10px;
+  border: 2px solid rgba(109, 109, 109,0.8);
+  background: none;
+  color: aliceblue;
+  margin-top: 10px;
+}
+.forms textarea{
+  width: 100%;
+  height: 130px;
+  border-radius: 5px;
+  padding: 10px;
+  border: 2px solid rgba(109, 109, 109,0.8);
+  background: none;
+  color: aliceblue;
+  margin-top: 10px;
+
+}
+
+.botao-contato{
+  width: 100%;
+  height: 50px;
+  background: none;
+  border: 2px solid rgba(109, 109, 109,0.8);
+  background: none;
+  color: aliceblue;
+  border-radius: 5px;
+  font-size: 15px;
+}
+.botao-contato:hover{
+  border: 2px solid aliceblue;
+  background: aliceblue;
+  color: #273188;
+
+}
+.form-group{
+  text-align: start;
+  padding: 15px 0;
+}
+.contato-externo{
+  margin: 50px auto;
+  width: 90%;
+  text-align: start;
+
+}
+.card-contato{
+  display: flex;
+  border: 1px solid rgba(109, 109, 109,0.8);
+  border-radius: 15px;
+  margin: 15px;
+  padding: 20px;
+  width: 100%;  
+  text-decoration: none;
+  color: #ffffff;
+  align-items: center;
+}
+.icon-contato{
+  border: 1px solid rgba(109, 109, 109,0.8);
+  padding: 10px;
+  border-radius: 15px;
+  font-size: 25px;
+}
+.contato-texto{
+  padding-left: 14px;
+}
+.footer{
+  color:#ffffff;
+  text-align: center;
+  padding: 50px;
+  background-color: #111111;
+}
+
+/* @media (max-width:1200px){
+  .content-projeto{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 27px;
+}
+
+}
+@media (max-width:1000px){
+  .home,.content-sobre-mim{
+    flex-wrap: wrap;
   }
-  to {
-    transform: rotate(360deg);
+  .content-projeto{
+  grid-template-columns: repeat(1,1fr);
+}
+}
+@media (max-width:600px){
+  .content-contato{
+    grid-template-columns: repeat(1,1fr);
   }
+  .skils{
+    flex-wrap: wrap;
+  }
+
+}
+@media (max-width:400px){
+  .foto img{
+    height: 230px;
+    width: 230px;
+  }
+  .content-sobre-mim div img{
+    height: 450px;
+    width: 350px;
+  }
+  .forms{
+    padding: 0;
+  }
+  .contato-externo{
+    width: 70%;
+  }
+} */
+
+/* ---- Estilos para Tablets (telas até 1024px) ---- */
+@media (max-width: 1024px) {
+    /* Ajusta a largura máxima dos containers para usar a tela de forma mais fluida */
+    .header, .home, .habilidade, .sobre-mim, .projetos, .contato {
+        max-width: 90%;
+    }
+
+    .home {
+        flex-direction: column-reverse; /* Coloca a foto em cima do texto */
+        text-align: center;
+        gap: 30px;
+    }
+
+    .content-sobre-mim {
+        flex-direction: column; /* Empilha a imagem e o texto */
+        align-items: center;
+        gap: 40px;
+    }
+    
+    .content-sobre-mim div img {
+        width: 100%; /* Imagem ocupa a largura disponível */
+        height: auto; /* Altura se ajusta para manter a proporção */
+        max-width: 500px; /* Limita o tamanho máximo da imagem */
+    }
+
+    .texto-sobre-mim {
+        border-left: none; /* Remove a borda lateral */
+        border-top: 2px solid rgba(109, 109, 109,0.8); /* Adiciona uma borda no topo */
+        padding-left: 0;
+        padding-top: 20px;
+        text-align: center;
+    }
+    
+    .content-projeto {
+        grid-template-columns: repeat(2, 1fr); /* Grade de projetos com 2 colunas */
+    }
+}
+
+
+/* ---- Estilos para Celulares (telas até 768px) ---- */
+@media (max-width: 768px) {
+    .menu {
+        padding: 15px 20px; /* Reduz o padding do menu */
+    }
+
+    /* Esconde o menu de texto. Você precisará de JavaScript
+       para criar um botão "hamburger" que mostre o menu. */
+    .hot-bar {
+        display: none; 
+    }
+    
+    .home {
+        margin-top: 120px;
+    }
+    
+    .foto {
+        padding: 0;
+    }
+
+    .foto img {
+        width: 280px; /* Reduz o tamanho da foto de perfil */
+        height: 280px;
+    }
+
+    .titulo {
+        font-size: 24px;
+    }
+
+    .content-home {
+        padding: 20px;
+        font-size: 16px;
+    }
+
+    .skils {
+        flex-wrap: wrap; /* Permite que os ícones de habilidades quebrem a linha */
+        gap: 20px;
+    }
+    
+    .content-projeto {
+        grid-template-columns: 1fr; /* Grade de projetos com 1 coluna */
+    }
+
+    .content-contato {
+        grid-template-columns: 1fr; /* Seção de contato com 1 coluna */
+    }
+
+    .forms {
+        border-right: none; /* Remove a borda vertical */
+        padding-right: 0;
+        margin-bottom: 40px; /* Adiciona espaço abaixo do formulário */
+    }
+
+    .habilidade, .sobre-mim, .projetos, .contato {
+        margin-top: 100px; /* Ajusta espaçamento entre seções */
+    }
+}
+
+
+/* ---- Ajustes Finos para Celulares Pequenos (telas até 480px) ---- */
+@media (max-width: 480px) {
+    .titulo {
+        font-size: 22px; /* Reduz ainda mais a fonte dos títulos */
+    }
+
+    .foto img {
+        width: 220px; /* Foto de perfil ainda menor */
+        height: 220px;
+    }
+
+    .menu {
+        padding: 10px 15px;
+    }
+
+    .perfil {
+        font-size: 20px;
+        justify-content: center; /* Centraliza o perfil no mobile */
+    }
+    
+    .texto-sobre-mim {
+        font-size: 16px;
+    }
+
+    .botao-projeto {
+        width: 110px;
+        height: 40px;
+        font-size: 15px;
+    }
+
+    .contato-externo {
+        width: 100%;
+    }
+
+    .card-contato {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .content-projeto{
+      overflow-x: scroll;
+    }
 }
